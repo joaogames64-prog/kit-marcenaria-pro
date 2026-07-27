@@ -427,7 +427,8 @@ a{text-decoration:none;color:inherit}
   box-shadow: 0 4px 12px rgba(198,105,10,.3);
   z-index: 10;
 }
-.plan-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 1.4rem; }
+.plan-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; overflow: hidden; }
+.plan-icon img { width: 100%; height: 100%; object-fit: contain; }
 .essencial .plan-icon { background: rgba(0,0,0,.04); color: var(--txt-sec); }
 .completo .plan-icon { background: rgba(198,105,10,.08); color: var(--urgent); }
 .plan-name { font-size: 1.2rem; font-weight: 900; color: var(--dark); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .5px; }
@@ -491,18 +492,14 @@ a{text-decoration:none;color:inherit}
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 86px;
-  height: 86px;
-  border-radius: 50%;
-  background: #007D3E;
-  color: #fff;
+  width: 96px;
+  height: 96px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 6px 20px rgba(0, 125, 62, 0.28);
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.12));
 }
-.garantia-badge .num { font-size: 1.9rem; font-weight: 900; line-height: 1; }
+.garantia-badge img { width: 100%; height: 100%; object-fit: contain; }
 .garantia-badge .txt { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-top: 2px; text-align: center; line-height: 1.1; }
 .garantia-title-new { font-size: 1.25rem; font-weight: 900; color: #3D2612; text-transform: uppercase; margin: 12px 0 16px; line-height: 1.25; letter-spacing: .5px; }
 .garantia-text-new { font-size: .88rem; color: #7A5B3E; line-height: 1.6; margin: 0; }
@@ -1106,7 +1103,7 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 <p class="section-sub reveal">Selecione o plano ideal para o seu momento, ambos com acesso imediato.</p>
 <div class="pricing-grid">
 <div class="price-card essencial card reveal">
-<div class="plan-icon">&#9998;</div>
+<div class="plan-icon"><img src="https://i.imgur.com/vQRtBH2.png" alt="Kit Iniciante"></div>
 <div class="plan-name">Kit Iniciante</div>
 <div class="plan-sub">Ideal para quem está começando</div>
 <div class="price-old">De R$67,00</div>
@@ -1118,16 +1115,15 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 <li><span class="chk"></span>Esquemas de corte completos</li>
 <li><span class="chk"></span>Acesso imediato e vitalício</li>
 <li class="missing"><span class="cross"></span>Guias de Acabamento Completos</li>
-<li class="missing"><span class="cross"></span>10 Erros Que Todo Iniciante Comete</li>
-<li class="missing"><span class="cross"></span>+30 Projetos Que Mais Vendem</li>
-<li class="missing"><span class="cross"></span>Lista de Materiais e Ferramentas</li>
+<li class="missing"><span class="cross"></span>Planilha Automática de Precificação</li>
+<li class="missing"><span class="cross"></span>30 Projetos Mais Pedidos</li>
 <li class="missing"><span class="cross"></span>Garantia de 7 dias</li>
 </ul>
 <button class="btn btn-cta btn-plan" id="btnEssencial">Quero o Kit Iniciante</button>
 </div>
 <div class="price-card completo card reveal">
 <span class="plan-badge">Mais vendido (últimas vagas)</span>
-<div class="plan-icon">&#9733;</div>
+<div class="plan-icon"><img src="https://i.imgur.com/wbnpbDg.png" alt="Kit Profissional"></div>
 <div class="plan-name">Kit Profissional</div>
 <div class="plan-sub">&nbsp;</div>
 <div class="price-old">De R$127,00</div>
@@ -1136,14 +1132,13 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 <div class="countdown-pill">Oferta acaba em <strong id="countdown">14:57</strong></div>
 <div class="price-warn">Preço sobe quando o tempo acabar</div>
 <ul class="price-checks">
-<li><span class="chk"></span>+2.000 Projetos Detalhados</li>
-<li><span class="chk"></span>Guias de Acabamento Completos</li>
-<li><span class="chk"></span>10 Erros Que Todo Iniciante Comete</li>
-<li><span class="chk"></span>+30 Projetos Que Mais Vendem</li>
-<li><span class="chk"></span>Lista de Materiais e Ferramentas</li>
+<li><span class="chk"></span>+2.000 Plantas Detalhadas</li>
 <li><span class="chk"></span>Vistas detalhadas de cada peça</li>
 <li><span class="chk"></span>Esquemas de corte completos</li>
 <li><span class="chk"></span>Acesso imediato e vitalício</li>
+<li><span class="chk"></span>Guias de Acabamento Completos</li>
+<li><span class="chk"></span>Planilha Automática de Precificação</li>
+<li><span class="chk"></span>30 Projetos Mais Pedidos</li>
 <li><span class="chk"></span>Garantia de 7 dias</li>
 </ul>
 <a href="#" class="btn btn-urgent btn-plan" id="btnCompleto">Quero o Kit Profissional</a>
@@ -1193,8 +1188,7 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 <div class="container">
 <div class="garantia-box-new reveal">
   <div class="garantia-badge">
-    <span class="num">7</span>
-    <span class="txt">DIAS DE<br>GARANTIA</span>
+    <img src="https://i.imgur.com/z6iuVZE.png" alt="Garantia de 7 Dias">
   </div>
   <h2 class="garantia-title-new">Garantia Incondicional<br>de 7 Dias</h2>
   <p class="garantia-text-new">
