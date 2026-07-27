@@ -122,6 +122,27 @@ a{text-decoration:none;color:inherit}
 .card:hover .card-img{transform:scale(1.05)}
 .card-body{padding:20px 18px;display:flex;flex-direction:column;flex-grow:1}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.bonus-price {
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bonus-price .old {
+  color: #D32F2F;
+  text-decoration: line-through;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.bonus-price .free {
+  color: #00873E;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
 .stars{color:var(--urgent);font-size:.85rem;letter-spacing:1px}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -687,7 +708,7 @@ a{text-decoration:none;color:inherit}
 .hero-seals{display:flex}
 .hero-visual{display:flex;justify-content:center}
 .mockup-img{max-width:480px}
-.cards-grid{grid-template-columns:repeat(3,1fr)}
+.cards-grid{grid-template-columns:repeat(2,1fr)}
 .dep-grid{grid-template-columns:repeat(3,1fr)}
 .footer-grid{grid-template-columns:1.4fr 1fr 1fr}
 .compare-grid{grid-template-columns:1fr 1fr}
@@ -829,84 +850,58 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 <div class="container">
 <div class="badge-center"><span class="badge">🎁 Presente especial</span></div>
 <h2 class="section-title reveal">Bônus Exclusivos</h2>
-<p class="section-sub reveal">Além dos projetos, você recebe 5 bônus que vão acelerar seus resultados na marcenaria.</p>
+<p class="section-sub reveal">Além dos projetos, você recebe 4 bônus que vão acelerar seus resultados na marcenaria.</p>
 <div class="cards-grid">
 <div class="card reveal">
   <div class="card-img-wrapper">
-    <img src="https://i.imgur.com/h4AUUpC.png" alt="Bônus 1" class="card-img" loading="lazy">
+    <img src="https://i.imgur.com/2Eg9JfC.png" alt="Bônus 1" class="card-img" loading="lazy">
   </div>
   <div class="card-body">
-    <h4>Bônus 1: Projetos Atualizados</h4>
-    <p class="card-desc">Projetos revisados com medidas precisas e listas de materiais.</p>
-    <ul class="card-list">
-      <li><span class="chk"></span>Medidas exatas em centímetros</li>
-      <li><span class="chk"></span>Lista de materiais por projeto</li>
-    </ul>
-  </div>
-</div>
-<div class="card reveal">
-  <div class="card-img-wrapper">
-    <img src="https://i.imgur.com/H0oU0Le.png" alt="Bônus 2" class="card-img" loading="lazy">
-  </div>
-  <div class="card-body">
-    <h4>Bônus 2: +2.000 Plantas Detalhadas</h4>
+    <h4>Bônus 1: +2.000 Plantas Detalhadas</h4>
     <p class="card-desc">Plantas com cortes numerados e instruções visuais de montagem.</p>
-    <ul class="card-list">
-      <li><span class="chk"></span>Cortes numerados</li>
-      <li><span class="chk"></span>Ordem de montagem ilustrada</li>
-    </ul>
+    <div class="bonus-price">
+      <span class="old">De R$47,00</span>
+      <span class="free">GRÁTIS</span>
+    </div>
   </div>
 </div>
 <div class="card reveal">
   <div class="card-img-wrapper">
-    <img src="https://i.imgur.com/Ie7RWyH.png" alt="Bônus 3" class="card-img" loading="lazy">
+    <img src="https://i.imgur.com/BbYJNig.png" alt="Bônus 2" class="card-img" loading="lazy">
   </div>
   <div class="card-body">
-    <h4>Bônus 3: Guias de Acabamento</h4>
+    <h4>Bônus 2: Guias de Acabamento</h4>
     <p class="card-desc">Domine lixas, vernizes e tintas para resultado impecável.</p>
-    <ul class="card-list">
-      <li><span class="chk"></span>Escolha certa da lixa</li>
-      <li><span class="chk"></span>Tipos de verniz e tinta</li>
-    </ul>
+    <div class="bonus-price">
+      <span class="old">De R$27,00</span>
+      <span class="free">GRÁTIS</span>
+    </div>
   </div>
 </div>
 <div class="card reveal">
   <div class="card-img-wrapper">
-    <img src="https://i.imgur.com/XHsz3ce.png" alt="Bônus 4" class="card-img" loading="lazy">
+    <img src="https://i.imgur.com/QsIaSox.png" alt="Bônus 3" class="card-img" loading="lazy">
   </div>
   <div class="card-body">
-    <h4>Bônus 4: 10 Erros de Iniciante</h4>
-    <p class="card-desc">Evite desperdícios aprendendo com quem já errou.</p>
-    <ul class="card-list">
-      <li><span class="chk"></span>Erros de medição mais comuns</li>
-      <li><span class="chk"></span>Erros na escolha da madeira</li>
-    </ul>
+    <h4>Bônus 3: Planilha Automática de Precificação</h4>
+    <p class="card-desc">Calcule o preço justo de cada peça automaticamente. Inclui custos de material, mão de obra, tempo de produção e margem de lucro.</p>
+    <div class="bonus-price">
+      <span class="old">De R$67,00</span>
+      <span class="free">GRÁTIS</span>
+    </div>
   </div>
 </div>
 <div class="card reveal">
   <div class="card-img-wrapper">
-    <img src="https://i.imgur.com/zI9gStv.png" alt="Bônus 5" class="card-img" loading="lazy">
+    <img src="https://i.imgur.com/fJVBQzl.png" alt="Bônus 4" class="card-img" loading="lazy">
   </div>
   <div class="card-body">
-    <h4>Bônus 5: +30 Projetos Que Vendem</h4>
+    <h4>Bônus 4: 30 Projetos Mais Pedidos</h4>
     <p class="card-desc">Descubra quais peças têm mais saída e quanto cobrar.</p>
-    <ul class="card-list">
-      <li><span class="chk"></span>Preço médio de venda sugerido</li>
-      <li><span class="chk"></span>Onde vender suas peças</li>
-    </ul>
-  </div>
-</div>
-<div class="card reveal">
-  <div class="card-img-wrapper">
-    <img src="https://i.imgur.com/MSAhIdT.png" alt="Bônus 6" class="card-img" loading="lazy">
-  </div>
-  <div class="card-body">
-    <h4>Bônus 6: Acesso Imediato</h4>
-    <p class="card-desc">Receba tudo no e-mail em segundos, sem espera.</p>
-    <ul class="card-list">
-      <li><span class="chk"></span>PDFs em alta qualidade</li>
-      <li><span class="chk"></span>Acesso multi-dispositivo</li>
-    </ul>
+    <div class="bonus-price">
+      <span class="old">De R$37,00</span>
+      <span class="free">GRÁTIS</span>
+    </div>
   </div>
 </div>
 </div>
