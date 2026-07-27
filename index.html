@@ -427,12 +427,28 @@ a{text-decoration:none;color:inherit}
   box-shadow: 0 4px 12px rgba(198,105,10,.3);
   z-index: 10;
 }
-.plan-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; overflow: hidden; }
-.plan-icon img { width: 100%; height: 100%; object-fit: contain; }
-.essencial .plan-icon { background: rgba(0,0,0,.04); color: var(--txt-sec); }
-.completo .plan-icon { background: rgba(198,105,10,.08); color: var(--urgent); }
-.plan-name { font-size: 1.2rem; font-weight: 900; color: var(--dark); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .5px; }
-.plan-sub { font-size: .8rem; color: var(--wood); margin-bottom: 14px; }
+.plan-img-wrapper {
+  width: 100%;
+  max-width: 260px;
+  margin: 12px auto 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plan-img-wrapper img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.15));
+  transition: transform 0.3s ease;
+}
+.price-card:hover .plan-img-wrapper img {
+  transform: scale(1.04);
+}
+.plan-name { font-size: 1.25rem; font-weight: 900; color: var(--dark); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .5px; }
+.plan-sub { font-size: .82rem; color: var(--wood); margin-bottom: 8px; }
 .price-old { font-size: .88rem; color: var(--txt-muted); text-decoration: line-through; margin-bottom: 2px; }
 .price-now { font-size: 2.3rem; font-weight: 900; margin: 2px 0; }
 .price-now.dark { color: #007D3E; }
@@ -1103,9 +1119,11 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 <p class="section-sub reveal">Selecione o plano ideal para o seu momento, ambos com acesso imediato.</p>
 <div class="pricing-grid">
 <div class="price-card essencial card reveal">
-<div class="plan-icon"><img src="https://i.imgur.com/vQRtBH2.png" alt="Kit Iniciante"></div>
 <div class="plan-name">Kit Iniciante</div>
 <div class="plan-sub">Ideal para quem está começando</div>
+<div class="plan-img-wrapper">
+  <img src="https://i.imgur.com/vQRtBH2.png" alt="Kit Iniciante">
+</div>
 <div class="price-old">De R$67,00</div>
 <div class="price-now dark"><span class="curr">R$</span> 10</div>
 <div class="price-label">pagamento único</div>
@@ -1123,9 +1141,11 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 </div>
 <div class="price-card completo card reveal">
 <span class="plan-badge">Mais vendido (últimas vagas)</span>
-<div class="plan-icon"><img src="https://i.imgur.com/wbnpbDg.png" alt="Kit Profissional"></div>
 <div class="plan-name">Kit Profissional</div>
-<div class="plan-sub">&nbsp;</div>
+<div class="plan-sub">O acervo completo com todos os bônus</div>
+<div class="plan-img-wrapper">
+  <img src="https://i.imgur.com/wbnpbDg.png" alt="Kit Profissional">
+</div>
 <div class="price-old">De R$127,00</div>
 <div class="price-now orange">R$ 19,90</div>
 <div class="price-label">pagamento único</div>
