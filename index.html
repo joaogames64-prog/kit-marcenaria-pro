@@ -737,29 +737,36 @@ a{text-decoration:none;color:inherit}
 /* Purchase Toast Notifications - Global (Mobile & Desktop) */
 .purchase-toast {
   position: fixed;
-  bottom: 16px;
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
   left: 16px;
-  z-index: 9999;
+  z-index: 999999;
   background: #ffffff;
   border-radius: 12px;
   padding: 10px 14px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
-  border-left: 4px solid #00873E;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0,0,0,0.1);
+  border-left: 5px solid #00873E;
   display: flex;
   align-items: center;
   gap: 10px;
   max-width: calc(100vw - 32px);
   width: 290px;
   opacity: 0;
+  visibility: hidden;
   transform: translateY(30px) scale(0.95);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  -webkit-transform: translateY(30px) scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+  -webkit-transition: opacity 0.4s ease, -webkit-transform 0.4s ease, visibility 0.4s ease;
   pointer-events: none;
   cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .purchase-toast.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  -webkit-transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
 }
 .purchase-toast-icon {
   width: 24px;
@@ -1351,6 +1358,14 @@ A oferta é válida somente hoje, dia <span id="dataHoje"></span>
 </div>
 </footer>
 
+<div class="purchase-toast" id="purchaseToast">
+  <div class="purchase-toast-icon">✓</div>
+  <div class="purchase-toast-content">
+    <span id="toastName"><strong>Fernando</strong></span> acabou de comprar o
+    <span class="plan-highlight" id="toastPlan">Kit Profissional</span>
+  </div>
+</div>
+
 <script>
 const LINK_CHECKOUT_BASICO = "https://pay.wiapy.com/-PnUHN4yRxAz";
 const LINK_CHECKOUT_COMPLETO = "https://pay.wiapy.com/q7QLltPFFVp";
@@ -1453,22 +1468,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       setTimeout(function() {
         purchaseToast.classList.remove('active');
-        var randomDelay = Math.floor(Math.random() * 8000) + 7000; // 7s to 15s random delay
+        var randomDelay = Math.floor(Math.random() * 6000) + 6000; // 6s to 12s random delay
         setTimeout(showNextToast, randomDelay);
       }, 4500);
     }
 
-    setTimeout(showNextToast, 3500);
+    setTimeout(showNextToast, 1500);
   }
 });
 </script>
-
-<div class="purchase-toast" id="purchaseToast">
-  <div class="purchase-toast-icon">✓</div>
-  <div class="purchase-toast-content">
-    <span id="toastName"><strong>Fernando</strong></span> acabou de comprar o
-    <span class="plan-highlight" id="toastPlan">Kit Profissional</span>
-  </div>
-</div>
 </body>
 </html>
